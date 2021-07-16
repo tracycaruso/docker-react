@@ -10,16 +10,19 @@ script:
   - docker run -e CI=true karmacode/docker-react npm run test
 
 deploy: 
-  provider: elesticbeanstalk
-  region: "us-east-2"
-  app: "docker-react-2"
-  env: "Dockerreact2-env"
-  bucket_name: "elasticbeanstalk-us-east-2-186881474644"
-  bucket_path: "docker-react-2"
+  provider: elasticbeanstalk
+  region: "us-west-1"
+  app: "react-docker"
+  env: "Reactdocker-env"
+  bucket_name: "elasticbeanstalk-us-west-1-186881474644"
+  bucket_path: "react-docker"
   on:
     branch: master
-  access_key_id: "$AWS_ACCESS_KEY"
-  secret_access_key: "$AWS_SECRET_KEY"
+  access_key_id:
+    secure: "$AWS_ACCESS_KEY"
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
+
   
   
   
